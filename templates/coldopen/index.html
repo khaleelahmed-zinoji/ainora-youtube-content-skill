@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Sora"; font-style: normal; font-weight: 200 800; font-display: block; src: url("assets/fonts/sora-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #1c1838; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: "Sora", sans-serif;
+        background: radial-gradient(110% 90% at 50% 45%, #3b3470 0%, #262050 50%, #17132f 100%); }
+      .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+      #g1 { left: 380px; top: 160px; width: 1160px; height: 760px; background: #655DA9; opacity: .55; }
+      #g2 { left: -200px; top: 600px; width: 700px; height: 600px; background: #8D81BD; opacity: .25; }
+      #g3 { right: -220px; top: -200px; width: 700px; height: 600px; background: #a78bfa; opacity: .22; }
+      #grid { position: absolute; inset: -60px; background-image: linear-gradient(rgba(196,181,253,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(196,181,253,.06) 1px, transparent 1px); background-size: 60px 60px; }
+      #stage { position: absolute; inset: 0; perspective: 1700px; perspective-origin: 50% 50%; }
+      #frame { position: absolute; left: 440px; top: 247.5px; width: 1040px; height: 585px; border-radius: 26px; overflow: hidden;
+        transform-origin: 50% 50%; background: #000;
+        box-shadow: 0 0 0 2px rgba(196,181,253,.55), 0 40px 90px rgba(10,6,30,.65), 0 0 120px rgba(141,129,189,.45); }
+      #clip { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      #shine { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.16) 45%, transparent 60%); }
+      .side { position: absolute; color: #ede9fe; white-space: nowrap; }
+      #tag { left: 70px; top: 300px; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-radius: 14px; background: #655DA9;
+        font-size: 22px; font-weight: 800; letter-spacing: .18em; color: #fff; box-shadow: 0 14px 34px rgba(0,0,0,.35); }
+      #tag i { width: 0; height: 0; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+      .ln { left: 74px; font-size: 30px; font-weight: 700; display: flex; align-items: center; gap: 14px; }
+      .ln b { display: inline-flex; width: 34px; height: 34px; border-radius: 10px; align-items: center; justify-content: center; font-size: 20px; background: rgba(196,181,253,.18); color: #c4b5fd; }
+      #l1 { top: 410px; } #l2 { top: 470px; } #l3 { top: 530px; }
+      #q { right: 70px; top: 330px; text-align: right; font-size: 40px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+      #q em { font-style: normal; color: #c4b5fd; }
+      #arrow { right: 140px; top: 470px; width: 6px; height: 120px; border-radius: 3px; background: linear-gradient(#c4b5fd, #8D81BD); transform-origin: 50% 0; }
+      #arrow::after { content: ""; position: absolute; left: -13px; bottom: -16px; border-top: 20px solid #8D81BD; border-left: 16px solid transparent; border-right: 16px solid transparent; }
+      #watch { right: 70px; top: 630px; padding: 14px 24px; border-radius: 16px; background: #fff; color: #4b4390; font-size: 26px; font-weight: 800; box-shadow: 0 14px 34px rgba(0,0,0,.35); }
+      #brand { left: 0; width: 1920px; top: 930px; text-align: center; font-size: 22px; font-weight: 700; letter-spacing: .3em; color: rgba(237,233,254,.55); }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-tcw0" id="root" data-composition-id="main" data-start="0" data-duration="7.16" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-gs5t" id="grid"></div>
+      <div data-hf-id="hf-2uwp" class="glow" id="g1"></div><div data-hf-id="hf-6t0q" class="glow" id="g2"></div><div data-hf-id="hf-ar4r" class="glow" id="g3"></div>
+      <div data-hf-id="hf-1rt5" id="stage">
+        <div data-hf-id="hf-xfzw" id="frame">
+          <video data-hf-id="hf-7wxq" id="clip" class="clip" src="assets/clip.mp4" data-start="0" data-duration="7.16" data-track-index="1" muted playsinline></video>
+          <div data-hf-id="hf-svny" id="shine"></div>
+        </div>
+      </div>
+      <div data-hf-id="hf-8wzo" class="side" id="tag"><i data-hf-id="hf-wt6k"></i>FINAL OUTPUT</div>
+      <div data-hf-id="hf-qk62" class="side ln" id="l1"><b data-hf-id="hf-gl6q">✓</b>Edited by Claude</div>
+      <div data-hf-id="hf-cfu7" class="side ln" id="l2"><b data-hf-id="hf-sqbz">0</b>timelines</div>
+      <div data-hf-id="hf-awrt" class="side ln" id="l3"><b data-hf-id="hf-e7ov">0</b>keyframes</div>
+      <div data-hf-id="hf-xwh7" class="side" id="q">How was<br data-hf-id="hf-x5px">this <em data-hf-id="hf-c7cv">made?</em></div>
+      <div data-hf-id="hf-oz2u" class="side" id="arrow"></div>
+      <div data-hf-id="hf-3u0q" class="side" id="watch">Watch the breakdown ↓</div>
+      <div data-hf-id="hf-smfu" class="side" id="brand">AINORA · AI AUTOMATION</div>
+      <audio data-hf-id="hf-9jh6" id="vo" src="assets/clip.wav" data-start="0" data-duration="7.16" data-track-index="10" data-volume="1"></audio>
+      <audio data-hf-id="hf-eswv" id="wh" src="assets/whoosh-short.mp3" data-start="0" data-duration="0.57" data-track-index="11" data-volume="0.25"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const Z = 6.55;                                   // zoom-through starts here; clip ends 7.16
+      // frame: lands tilted, turns slowly toward the viewer, then straightens and fills the screen
+      tl.fromTo("#frame", { opacity: 0, scale: 0.82, rotationY: -22, rotationX: 9, rotation: -3, y: 40 },
+                          { opacity: 1, scale: 1, rotationY: -9, rotationX: 4, rotation: -2, y: 0, duration: 0.7, ease: "power3.out" }, 0);
+      tl.fromTo("#frame", { rotationY: -9, rotationX: 4, rotation: -2 },
+                          { rotationY: -3, rotationX: 2, rotation: -1, duration: Z - 0.7, ease: "sine.inOut", immediateRender: false }, 0.7);
+      tl.fromTo("#frame", { rotationY: -3, rotationX: 2, rotation: -1, scale: 1, borderRadius: 26 },
+                          { rotationY: 0, rotationX: 0, rotation: 0, scale: 1.84616, borderRadius: 0, duration: 7.16 - Z, ease: "power2.in", immediateRender: false }, Z);
+      tl.fromTo("#shine", { x: -1200 }, { x: 1300, duration: 1.1, ease: "power2.inOut" }, 0.5);
+      tl.fromTo("#g1", { scale: 0.9, opacity: .4 }, { scale: 1.08, opacity: .6, duration: 7.16, ease: "sine.inOut" }, 0);
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: 40, y: 40, duration: 7.16, ease: "none" }, 0);
+      // left: what this is
+      tl.fromTo("#tag", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.45);
+      ["#l1", "#l2", "#l3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 1.0 + i * 0.45));
+      // right: how it was made
+      tl.fromTo("#q", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 2.6);
+      tl.fromTo("#arrow", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.5, ease: "power2.out" }, 3.3);
+      tl.fromTo("#watch", { opacity: 0, y: 20, scale: .9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 3.75);
+      tl.fromTo("#watch", { scale: 1 }, { scale: 1.06, duration: 0.45, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 4.3);
+      tl.fromTo("#brand", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 1.2);
+      // everything around the frame clears as it fills the screen
+      tl.to("#tag, #l1, #l2, #l3, #q, #arrow, #watch, #brand", { opacity: 0, duration: 0.3, ease: "power1.in" }, Z - 0.05);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

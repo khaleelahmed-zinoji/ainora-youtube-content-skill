@@ -1,0 +1,23 @@
+{
+  "source": "../Voice over v2.MOV",
+  "keep": null,
+  "tighten": false,
+  "green_key": "0x00e575",
+  "end_card_seconds": 4.2,
+  "scenes": [
+    ["hook",   "everything you just",  0],
+    ["turn",   "this is what i gave",  0],
+    ["why",    "let me set this",      0],
+    ["stack",  "here is the whole",    0],
+    ["repeat", "that's why i never",   0],
+    ["step1",  "step one is",          0],
+    ["step2",  "this is the step",     0],
+    ["step3",  "now it builds",        0],
+    ["step4",  "then it renders",      0],
+    ["payoff", "so the part that",   200],
+    ["forwho", "should you do this",   0],
+    ["close",  "the skills i used",  300]
+  ],
+  "music": { "bright": "assets/music/bright.wav", "calm": "assets/music/calm.wav" },
+  "music_switch": ["why", "step1", "step3", "payoff", "close"]
+}
